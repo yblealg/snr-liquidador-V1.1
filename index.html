@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNR SIR · Liquidador</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<section id="login" class="login" hidden>
+  <div class="login-marca">
+    <span class="num040" aria-hidden="true">040</span>
+    <img src="img/logoSNR.jpg" alt="Superintendencia de Notariado y Registro" class="logo logo-claro" onerror="this.remove()">
+    <h1>SNR SIR</h1>
+    <p>Liquidador de registro<br>ORIP Barranquilla</p>
+  </div>
+  <div class="login-form">
+    <div class="halo" id="halo">
+      <form id="formLogin" class="login-caja" autocomplete="on">
+        <h2>Ingresar</h2>
+        <label for="email">Correo</label>
+        <input id="email" type="email" required autocomplete="username" autofocus>
+        <label for="clave">Contraseña</label>
+        <input id="clave" type="password" required autocomplete="current-password">
+        <p id="loginError" class="msg-error" role="alert" hidden></p>
+        <button class="btn" type="submit" id="btnEntrar">Ingresar</button>
+        <p class="suave nota">Uso exclusivo de personal autorizado.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="app" class="app" hidden>
+  <aside class="lateral">
+    <h2>SNR SIR</h2>
+    <p id="oficina" class="suave"></p>
+    <dl class="datos">
+      <dt>Funcionario</dt><dd id="funcionario"></dd>
+      <dt>Cargo</dt><dd id="cargo"></dd>
+      <dt>Norma</dt><dd id="norma"></dd>
+      <dt>Sesión</dt><dd id="usuario" class="correo"></dd>
+    </dl>
+    <button class="btn btn-salir" id="btnSalir" type="button">Cerrar sesión</button>
+    <img src="img/OTI.jpg" alt="" class="logo" onerror="this.remove()">
+    <img src="img/logoSNR.jpg" alt="Superintendencia de Notariado y Registro" class="logo logo-claro" onerror="this.remove()">
+    <p class="version">Versión <span id="version"></span></p>
+  </aside>
+  <main class="principal">
+    <nav id="menu" class="menu" aria-label="Módulos"></nav>
+    <div id="vistas"></div>
+  </main>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+<!-- Datos -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+<script src="data/diccionario.js"></script>
+<script src="data/tipos_documento.js"></script>
+<script src="js/motor.js"></script>
+<script src="js/traslados-datos.js"></script>
+<script src="js/almacen.js"></script>
+<script src="js/pdf.js"></script>
+<!-- Núcleo -->
+<script src="js/config.js"></script>
+<script src="js/nucleo.js"></script>
+<!-- Módulos: para agregar uno nuevo, cree su archivo y sume una línea aquí -->
+<script src="js/modulos/inicio.js"></script>
+<script src="js/modulos/preliquidacion.js"></script>
+<script src="js/modulos/historial.js"></script>
+<script src="js/modulos/traslados.js"></script>
+<script src="js/modulos/proximo.js"></script>
+<script>document.addEventListener('DOMContentLoaded', iniciarSistema);</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+:root{--azul:#2c3e50;--azul-2:#34495e;--verde:#8ada09;--verde-o:#27ae60;--fondo:#f4f7f6;--borde:#dfe6e9;--texto:#233140;--suave:#7f8c8d;--error:#c0392b}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;font-family:"Segoe UI",Tahoma,sans-serif;color:var(--texto);background:var(--fondo);line-height:1.5}
+h1,h2,h3{margin:0 0 .4em;line-height:1.2}
+.suave{color:var(--suave);margin:.2em 0 1em}
+:focus-visible{outline:3px solid var(--verde);outline-offset:2px}
+
+.login{min-height:100vh;display:grid;place-items:center;background:var(--azul);padding:1rem}
+.login-caja{background:#fff;width:100%;max-width:380px;padding:2rem;border-radius:10px;border-top:6px solid var(--verde)}
+.login-caja label{display:block;font-size:.8rem;font-weight:600;margin:.9rem 0 .25rem}
+input{width:100%;padding:.7rem;border:2px solid var(--borde);border-radius:8px;font:inherit}
+.msg-error{color:var(--error);font-weight:600;font-size:.9rem;margin:.8rem 0 0}
+.btn{display:block;width:100%;margin-top:1.2rem;padding:.75rem;border:0;border-radius:8px;background:var(--verde-o);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.btn:disabled{opacity:.6;cursor:wait}
+
+.app{display:flex;min-height:100vh}
+.lateral{width:270px;flex-shrink:0;background:var(--azul);color:#fff;padding:1.5rem;border-right:5px solid var(--verde)}
+.lateral .suave{color:#b8c4cf}
+.datos{margin:0 0 1rem;font-size:.85rem}
+.datos dt{color:var(--verde);font-weight:600;margin-top:.7rem}
+.datos dd{margin:0}
+.correo{overflow-wrap:anywhere}
+.btn-salir{background:#c0392b;margin:0 0 1.2rem}
+.logo{width:100%;border-radius:4px;margin-top:.8rem}
+.logo-claro{background:#fff;padding:.5rem}
+.version{color:var(--verde);font-size:.8rem;margin-top:1.2rem}
+
+.principal{flex:1;min-width:0;padding:1.5rem 2rem}
+.menu{display:flex;flex-wrap:wrap;gap:.5rem;padding-bottom:1rem;margin-bottom:1.2rem;border-bottom:1px solid #e3e8e6}
+.nav-btn{padding:.6rem 1.1rem;border:0;border-radius:6px;background:#e6ecea;color:var(--azul);font:inherit;font-weight:700;cursor:pointer}
+.nav-btn.activo{background:var(--verde-o);color:#fff}
+.tarjeta{background:#fff;border-radius:10px;padding:1.4rem 1.6rem;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:1.2rem}
+.tarjeta.error{border-left:5px solid var(--error)}
+.estado{list-style:none;padding:0;margin:.5rem 0 0}
+.estado li{padding:.35rem 0;border-bottom:1px solid #eef1f0}
+.ok{color:var(--verde-o);font-weight:700}
+.mal{color:var(--error);font-weight:700}
+.pendiente{color:var(--suave)}
+
+@media (max-width:800px){
+  .app{flex-direction:column}
+  .lateral{width:100%;border-right:0;border-bottom:5px solid var(--verde)}
+  .principal{padding:1rem}
+}
+
+/* Login dividido con haz de luz */
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+.login{display:grid;grid-template-columns:1fr 1fr;place-items:stretch;padding:0;background:var(--fondo)}
+.login-marca{position:relative;overflow:hidden;background:var(--azul);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:3rem}
+.login-marca .logo{max-width:220px;margin:0 0 1.5rem}
+.login-marca h1{font-size:2.4rem}
+.num040{position:absolute;right:-1rem;bottom:-3rem;font-size:20rem;font-weight:800;line-height:1;color:rgba(255,255,255,.05);user-select:none}
+.login-form{display:grid;place-items:center;padding:1.5rem}
+.halo{padding:2px;border-radius:14px;background:conic-gradient(from var(--ang),#dfe6e9 0 55%,#27ae60 85%,#8ada09 100%);box-shadow:0 0 18px rgba(138,218,9,.25);animation:giro 4s linear infinite}
+.halo.verificando{animation-duration:1.2s}
+.halo.falla{background:var(--error);animation:none}
+@keyframes giro{to{--ang:360deg}}
+@media (prefers-reduced-motion:reduce){.halo{animation:none}}
+.login-caja{border-top:0;border-radius:12px;width:min(380px,86vw)}
+.nota{font-size:.8rem;margin:1rem 0 0;text-align:center}
+@media (max-width:800px){.login{grid-template-columns:1fr}.login-marca{padding:1.2rem 1.5rem}.num040{display:none}.login-marca .logo{max-width:140px;margin-bottom:.6rem}.login-marca h1{font-size:1.6rem}}
+/* Preliquidación */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem;margin-bottom:.8rem;align-items:end}
+.tarjeta label{display:block;font-size:.8rem;font-weight:600}
+.tarjeta input,.tarjeta select{margin-top:.25rem;font-size:1rem}
+.btn-mini{margin:0;width:auto;padding:.7rem 1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.chip{background:#e6ecea;border-radius:999px;padding:.25rem .3rem .25rem .8rem;font-weight:600;font-size:.9rem}
+.chip-amarillo{background:#fff3cd}
+.chip button,.x{border:0;background:none;cursor:pointer;color:var(--suave);font-size:1rem;padding:.2rem .5rem}
+.tabla-scroll{overflow-x:auto;margin-top:1rem}
+.tabla{width:100%;border-collapse:collapse;font-size:.9rem}
+.tabla th{background:var(--azul);color:#fff;text-align:left;padding:.5rem}
+.tabla td{padding:.5rem;border-bottom:1px solid #eee}
+.resumen dl{display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;margin:0}
+.resumen dd{margin:0;text-align:right;font-weight:600}
+.resumen .total{font-size:1.25rem;font-weight:800;border-top:2px solid var(--azul);padding-top:.4rem}
+.resumen-aviso .total{background:#fff3cd}
+.aviso-cert{margin:.8rem 0 0;padding:.6rem;background:#fff3cd;border-radius:6px;font-weight:600}
+@media (max-width:800px){.resumen{position:sticky;bottom:0;z-index:5;box-shadow:0 -4px 14px rgba(0,0,0,.15)}input,select{font-size:16px}}
+
+/* Historial y diálogo */
+.periodos{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem}
+.periodos button,.mini{border:0;border-radius:6px;background:#e6ecea;color:var(--azul);font:inherit;font-weight:700;padding:.45rem .8rem;cursor:pointer}
+.periodos button.activo{background:var(--verde-o);color:#fff}
+dialog{border:0;border-radius:10px;padding:1.4rem;max-width:min(440px,90vw);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(20,30,40,.55)}
+.dlg-botones{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
+.dlg-botones button{padding:.7rem;border:0;border-radius:8px;background:var(--azul);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.dlg-botones button[data-r=no]{background:#e6ecea;color:var(--azul)}

@@ -1,0 +1,11 @@
+SNR SIR - Versión 1.0 (primera entrega)
+
+1) Copie OTI.jpg y logoSNR.jpg dentro de la carpeta img/.
+2) Suba todo el contenido a su repositorio y active GitHub Pages. La página debe abrirse por http(s),
+   no con doble clic, porque carga data/traslados.json.
+3) Firebase (proyecto orip-migracion): active Authentication > Sign-in method > Correo/contraseña,
+   cree su usuario en Users y, si aparece, desactive la creación de cuentas en Settings > User actions.
+4) Ingrese. En Inicio debe leer "165 actos cargados".
+
+Nota: data/traslados.json queda en el repositorio; mientras éste sea público, cualquiera con la dirección puede descargarlo.
+Para agregar un módulo: cree js/modulos/x.js con registrarModulo({...}) y sume su <script> en index.html.
