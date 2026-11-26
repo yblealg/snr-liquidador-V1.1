@@ -52,7 +52,7 @@ input{width:100%;padding:.7rem;border:2px solid var(--borde);border-radius:8px;f
 .login-marca h1{font-size:2.4rem}
 .num040{position:absolute;right:-1rem;bottom:-3rem;font-size:20rem;font-weight:800;line-height:1;color:rgba(255,255,255,.05);user-select:none}
 .login-form{display:grid;place-items:center;padding:1.5rem}
-.halo{padding:2px;border-radius:14px;background:conic-gradient(from var(--ang),#dfe6e9 0 55%,#27ae60 85%,#8ada09 100%);box-shadow:0 0 18px rgba(138,218,9,.25);animation:giro 4s linear infinite}
+.halo{padding:2px;border-radius:14px;background:conic-gradient(from var(--ang),#dfe6e9 0 55%,#08f86c 85%,#8ada09 100%);box-shadow:0 0 18px rgba(138,218,9,.25);animation:giro 4s linear infinite}
 .halo.verificando{animation-duration:1.2s}
 .halo.falla{background:var(--error);animation:none}
 @keyframes giro{to{--ang:360deg}}
